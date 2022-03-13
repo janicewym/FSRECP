@@ -1,1 +1,2 @@
-# FSRECP
+# FSRECP -《用于少样本关系抽取的领域知识增强对比学习研究》的相关代码和数据集
+Our codes and data will be released ... ...
