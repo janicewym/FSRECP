@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-03-15T15:57:15.565Z" agent="5.0 (Macintosh)" etag="aCfO9cBDbrVlh7aAbTde" version="17.1.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-03-15T16:41:26.406Z" agent="5.0 (Macintosh)" etag="XS1kjz163tu_nr5VkgFS" version="17.1.2" type="github" pages="2">
   <diagram id="LCPhNvdda3lcD9kDLqjS" name="第 1 页">
-    <mxGraphModel dx="727" dy="1020" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1042" dy="1224" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -243,6 +243,18 @@
               <mxPoint x="1288" y="350" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="6Z50Ax22lRdQkKNb6Pp_-1" value="基于提示学习生成关系对比实例" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1013" y="116.2" width="160" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="6Z50Ax22lRdQkKNb6Pp_-2" value="对比学习预训练" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1376" y="69.44" width="160" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="6Z50Ax22lRdQkKNb6Pp_-3" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fontSize=11;strokeColor=#000000;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="360" width="480" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="6Z50Ax22lRdQkKNb6Pp_-4" value="原型网络" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1231.39" y="512" width="160" height="18" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -533,7 +545,7 @@
         <mxCell id="27noWYNILPITUNx_PyD3-123" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="27noWYNILPITUNx_PyD3-166">
           <mxGeometry x="3" y="2" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-124" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="27noWYNILPITUNx_PyD3-166">
+        <mxCell id="27noWYNILPITUNx_PyD3-124" value="支持实例s&lt;sub&gt;1&lt;/sub&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="27noWYNILPITUNx_PyD3-166">
           <mxGeometry x="6" y="4" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-167" value="" style="group;shadow=1;" vertex="1" connectable="0" parent="27noWYNILPITUNx_PyD3-1">
@@ -545,7 +557,7 @@
         <mxCell id="27noWYNILPITUNx_PyD3-128" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="27noWYNILPITUNx_PyD3-167">
           <mxGeometry x="1.9852941176470722" y="1.7647058823529278" width="86.02941176470588" height="26.470588235294116" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-129" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="27noWYNILPITUNx_PyD3-167">
+        <mxCell id="27noWYNILPITUNx_PyD3-129" value="支持实例s&lt;sub&gt;1&lt;/sub&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="27noWYNILPITUNx_PyD3-167">
           <mxGeometry x="3.9705882352941444" y="3.5294117647058556" width="86.02941176470588" height="26.470588235294116" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-168" value="" style="group;shadow=1;" vertex="1" connectable="0" parent="27noWYNILPITUNx_PyD3-1">
