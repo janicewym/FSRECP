@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-03-15T16:41:26.406Z" agent="5.0 (Macintosh)" etag="XS1kjz163tu_nr5VkgFS" version="17.1.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-03-16T02:18:07.372Z" agent="5.0 (Macintosh)" etag="NsuozHDC77huTCi9IeeC" version="17.1.2" type="github" pages="2">
   <diagram id="LCPhNvdda3lcD9kDLqjS" name="第 1 页">
-    <mxGraphModel dx="1042" dy="1224" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="10" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,13 +22,13 @@
         <mxCell id="Vm2SN4HjnvWXbsA3-ouM-33" value="z" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CC99FF;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="1000" y="240" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Vm2SN4HjnvWXbsA3-ouM-34" value="x&lt;sub&gt;prompt1&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFCC;shadow=1;" vertex="1" parent="1">
+        <mxCell id="Vm2SN4HjnvWXbsA3-ouM-34" value="x&lt;sub&gt;prompt&lt;i&gt;1&lt;/i&gt;&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCFFCC;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="1085" y="165.5" width="110" height="35" as="geometry" />
         </mxCell>
         <mxCell id="Vm2SN4HjnvWXbsA3-ouM-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=1;" edge="1" parent="1" source="Vm2SN4HjnvWXbsA3-ouM-36" target="Vm2SN4HjnvWXbsA3-ouM-38">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Vm2SN4HjnvWXbsA3-ouM-36" value="x&lt;sub&gt;prompt1&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66FF66;shadow=1;" vertex="1" parent="1">
+        <mxCell id="Vm2SN4HjnvWXbsA3-ouM-36" value="x&lt;sub&gt;prompt&lt;i&gt;m&lt;/i&gt;&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66FF66;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="1085" y="228" width="110" height="35" as="geometry" />
         </mxCell>
         <mxCell id="Vm2SN4HjnvWXbsA3-ouM-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;shadow=1;" edge="1" parent="1" source="Vm2SN4HjnvWXbsA3-ouM-37" target="Vm2SN4HjnvWXbsA3-ouM-39">
@@ -255,6 +255,9 @@
         </mxCell>
         <mxCell id="6Z50Ax22lRdQkKNb6Pp_-4" value="原型网络" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1231.39" y="512" width="160" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="6Z50Ax22lRdQkKNb6Pp_-5" value="……" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;fontSize=11;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="1113" y="200" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
