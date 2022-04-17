@@ -34,10 +34,11 @@ class EntityEnhancement(nn.Module):
         x1 = self.linear_combine_type(x)  # (B * N * K,max_len, H)
         return x1
 
-class MYKGTProto(fewshot_re_kit.framework.FewShotREModel):
+class MYKGTCON(fewshot_re_kit.framework.FewShotREModel):
     
     def __init__(self, sentence_encoder, id2entity, id2rel, dot=False):
         fewshot_re_kit.framework.FewShotREModel.__init__(self, sentence_encoder)
+        # self.fc = nn.Linear(hidden_size, hidden_size)
         self.drop = nn.Dropout()
         self.dot = dot
         self.id2entity = id2entity
@@ -136,8 +137,7 @@ class MYKGTProto(fewshot_re_kit.framework.FewShotREModel):
 
         logits = self.__batch_dist__(proto, query) # (B, total_Q, N)
         minn, _ = logits.min(-1)
-        logits = torch.cat([logits, minn.unsqueeze(2) - 1], 2) # (B,,total_Q, N + 1)
+        logits = torch.cat([logits, minn.unsqueeze(2) - 1], 2) # (B,total_Q, N + 1)
         _, pred = torch.max(logits.view(-1, N + 1), 1)
 
-        
-        return logits, pred
+        return logits, pred, proto, support

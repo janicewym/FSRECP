@@ -11,6 +11,7 @@ from torch.autograd import Variable
 from torch.nn import functional as F
 # from pytorch_pretrained_bert import BertAdam
 from transformers import AdamW, get_linear_schedule_with_warmup
+from pytorch_metric_learning.losses import NTXentLoss
 
 def warmup_linear(global_step, warmup_step):
     if global_step < warmup_step:
@@ -29,6 +30,7 @@ class FewShotREModel(nn.Module):
         self.sentence_encoder = nn.DataParallel(my_sentence_encoder)
         # self.sentence_encoder = my_sentence_encoder
         self.cost = nn.CrossEntropyLoss()
+        self.ntxloss = NTXentLoss(temperature=0.05)
     
     def forward(self, support, query, N, K, Q):
         '''
@@ -49,6 +51,12 @@ class FewShotREModel(nn.Module):
         '''
         N = logits.size(-1)
         return self.cost(logits.view(-1, N), label.view(-1))
+
+    def cp_loss(self, state, label):
+        D = state.shape[-1]
+        state = state.view(-1, D)
+        label = label.view(-1)
+        return self.ntxloss(state, label)
     
     def ce_loss(self, logits, temperature=0.07):
         '''
@@ -290,24 +298,6 @@ class FewShotREFramework:
                     label = label.cuda()
                 logits, pred = model(batch, N_for_train, K, 
                         Q * N_for_train + na_rate * Q)
-            elif iskg and istype is False:
-                support, query, label, rel_text = next(self.train_data_loader) # min
-                # print(support.keys())
-                # print('1:', torch.cuda.memory_allocated(0))
-                if torch.cuda.is_available():
-                    for k in support:
-                        support[k] = support[k].cuda()
-                    for k in query:
-                        query[k] = query[k].cuda()
-                    for k in rel_text:
-                        rel_text[k] = rel_text[k].cuda()
-                    label = label.cuda()
-                # print('2:', torch.cuda.memory_allocated(0))
-
-                # logits, pred = model(support, query, 
-                #        N_for_train, K, Q * N_for_train + na_rate * Q, label2classname)
-                logits, pred, logits_proto, labels_proto, q_logits_proto, q_labels_proto = model(support, query, 
-                        N_for_train, K, Q * N_for_train + na_rate * Q, rel_text) # min            
             
             elif iskg and istype:
                 support, query, label, rel_text, support_type, query_type = next(self.train_data_loader) # min
@@ -325,7 +315,7 @@ class FewShotREFramework:
                         query_type[k] = query_type[k].cuda()
                     label = label.cuda()
                 if iscontra:
-                    logits, pred, inter_logits, sintra_logits, qintra_logits = model(support, query, 
+                    logits, pred, proto, support_emb = model(support, query, 
                             N_for_train, K, Q * N_for_train + na_rate * Q, rel_text, support_type, query_type) 
                 
                 else:
@@ -347,11 +337,11 @@ class FewShotREFramework:
  
             if iskg:
                 if iscontra:
-                    # loss = model.loss(logits, label) / float(grad_iter) + model.ce_loss(inter_logits) + model.ce_loss(sintra_logits) + model.ce_loss(qintra_logits)
-                    # loss = model.loss(logits, label) / float(grad_iter) + model.ce_loss(inter_logits) # onecone
-                    # loss = model.loss(logits, label) / float(grad_iter) + 0.02 * model.ce_loss(inter_logits) + 0.015 * model.ce_loss(sintra_logits) # twocon-v2.1
-                    loss = model.loss(logits, label) / float(grad_iter) + model.ce_loss(inter_logits) + model.ce_loss(sintra_logits)
-                    # loss = model.loss(logits, label) / float(grad_iter) +  model.ce_loss(inter_logits) +  model.ce_loss(sintra_logits)
+                    one_label = label.view(-1, N_for_train, Q).float()
+                    proto_label = torch.mean(one_label, 2).long() # (B, N)
+                    support_label = proto_label.unsqueeze(-1).expand(-1, -1, K) # (B, N, K)
+                    total_loss =  model.loss(logits, label) + model.cp_loss(proto, proto_label) + model.cp_loss(support_emb, support_label)
+                    loss = total_loss / float(grad_iter) 
                 else:
                     loss = model.loss(logits, label) / float(grad_iter)
 
@@ -450,19 +440,7 @@ class FewShotREFramework:
                             batch[k] = batch[k].cuda()
                         label = label.cuda()
                     logits, pred = model(batch, N, K, Q * N + Q * na_rate)
-                elif iskg and istype is False:
-                    support, query, label, rel_text = next(eval_dataset)
-                    if torch.cuda.is_available():
-                        for k in support:
-                            support[k] = support[k].cuda()
-                        for k in query:
-                            query[k] = query[k].cuda()
-                        for k in rel_text:
-                            rel_text[k] = rel_text[k].cuda()
-                        label = label.cuda()
-                    # logits, pred = model(support, query, N, K, Q * N + Q * na_rate, label2classname, eval=True) 
-                    logits, pred, _, _, _, _ = model(support, query, N, K, Q * N + Q * na_rate, rel_text, eval=True) # min
-                    
+      
                 elif iskg and istype:
                     support, query, label, rel_text, support_type, query_type = next(eval_dataset)
                     
@@ -479,7 +457,7 @@ class FewShotREFramework:
                             query_type[k] = query_type[k].cuda()
                         label = label.cuda()
                     if iscontra:
-                        logits, pred, _, _, _ = model(support, query, N, K, Q * N + Q * na_rate, rel_text, support_type, query_type, eval=True) 
+                        logits, pred, _, _ = model(support, query, N, K, Q * N + Q * na_rate, rel_text, support_type, query_type, eval=True) 
                     else:
                         logits, pred = model(support, query, N, K, Q * N + Q * na_rate, rel_text, support_type, query_type, eval=True) # min
                 elif iskg is False and istype is False:

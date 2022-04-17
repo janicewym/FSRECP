@@ -408,141 +408,18 @@ class PromptSentenceEncoder(nn.Module):
         rel_in_index = min(self.max_length, rel_in_index)
         return indexed_tokens, pos1_in_index - 1, pos2_in_index - 1, rel_in_index-1, mask
 
-class KGPromptSentenceEncoder(nn.Module):
-
-    def __init__(self, pretrain_path, max_length, cat_entity_rep=False, mask_entity=False): 
-        nn.Module.__init__(self)
-        self.bert = BertForMaskedLM.from_pretrained(pretrain_path)
-        self.max_length = max_length
-        self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-        self.cat_entity_rep = cat_entity_rep
-        self.mask_entity = mask_entity
-        self.max_length_name = 8
-
-    def forward(self, inputs, cat=False, isrel=False):
-        results = self.bert(inputs['word'], attention_mask=inputs['mask'], return_dict=True, output_hidden_states=True)
-        outputs = results.hidden_states[-1]
-        tensor_range = torch.arange(inputs['word'].size()[0])
-        state = outputs[tensor_range, inputs['rel_mask']]
-        
-        if isrel:
-            return state, outputs
-        
-        else:
-            h_state = outputs[tensor_range, inputs['pos1']]
-            t_state = outputs[tensor_range, inputs['pos2']]
-            h_id = inputs['head_id']
-            t_id = inputs['tail_id']
-            r_id = inputs['rel_id']
-            if cat:
-                state = torch.cat((h_state, t_state), -1)
-            return state, outputs, h_state, t_state, h_id, t_id, r_id
-    
-    def tokenize(self, raw_tokens, pos_head, pos_tail):
-        # token -> index
-        tokens = ['[CLS]']
-        cur_pos = 0
-        pos1_in_index = 1
-        pos2_in_index = 1
-        rel_in_index = 1
-        for token in raw_tokens:
-            if token != '[MASK]':
-                token = token.lower()
-            if cur_pos == pos_head[0]:
-                tokens.append('[E1]')
-                pos1_in_index = len(tokens)
-            if cur_pos == pos_tail[0]:
-                tokens.append('[E2]')
-                pos2_in_index = len(tokens)
-            
-            tokens += self.tokenizer.tokenize(token)
-            
-            if cur_pos == pos_head[-1]:
-                tokens.append('[/E1]')
-            if cur_pos == pos_tail[-1]:
-                tokens.append('[/E2]')
-            
-            if token == '[MASK]':
-                rel_in_index = len(tokens)
-                
-            cur_pos += 1
-        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
-        
-        # padding
-        while len(indexed_tokens) < self.max_length:
-            indexed_tokens.append(0)
-        indexed_tokens = indexed_tokens[:self.max_length]
-
-        # pos
-        pos1 = np.zeros((self.max_length), dtype=np.int32)
-        pos2 = np.zeros((self.max_length), dtype=np.int32)
-        for i in range(self.max_length):
-            pos1[i] = i - pos1_in_index + self.max_length
-            pos2[i] = i - pos2_in_index + self.max_length
-
-        # mask
-        mask = np.zeros((self.max_length), dtype=np.int32)
-        mask[:len(tokens)] = 1
-
-        pos1_in_index = min(self.max_length, pos1_in_index)
-        pos2_in_index = min(self.max_length, pos2_in_index)
-        rel_in_index = min(self.max_length, rel_in_index)
-        return indexed_tokens, pos1_in_index - 1, pos2_in_index - 1, rel_in_index-1, mask
-
-    def tokenize_rel(self, raw_tokens):
-        # token -> index
-        tokens = ['[CLS]']
-        name, description = raw_tokens
-        for token in name.split(' '):
-            token = token.lower()
-            tokens += self.tokenizer.tokenize(token)
-        tokens.append('[SEP]')
-        for token in description.split(' '):
-            token = token.lower()
-            tokens += self.tokenizer.tokenize(token)
-        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
-
-        # padding
-        while len(indexed_tokens) < self.max_length:
-            indexed_tokens.append(0)
-        indexed_tokens = indexed_tokens[:self.max_length]
-
-        # mask
-        mask = np.zeros(self.max_length, dtype=np.int32)
-        mask[:len(tokens)] = 1
-
-        return indexed_tokens, mask
-
-    def tokenize_name(self, name):
-        # for FewRel 2.0
-        # token -> index
-        tokens = ['[CLS]']
-        for token in name.split('_'):
-            token = token.lower()
-            tokens += self.tokenizer.tokenize(token)
-        indexed_tokens = self.tokenizer.convert_tokens_to_ids(tokens)
-
-        # padding
-        while len(indexed_tokens) < self.max_length_name:
-            indexed_tokens.append(0)
-        indexed_tokens = indexed_tokens[:self.max_length_name]
-
-        # mask
-        mask = np.zeros(self.max_length_name, dtype=np.int32)
-        mask[:len(tokens)] = 1
-
-        return indexed_tokens, mask
-
 class KGTypePromptSentenceEncoder(nn.Module):
-    def __init__(self, pretrain_path, max_length, cat_entity_rep=False, mask_entity=False): 
+    def __init__(self, pretrain_path, max_length, special_tokens_dict): 
         nn.Module.__init__(self)
         self.bert = BertForMaskedLM.from_pretrained(pretrain_path)
         self.max_length = max_length
         self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-        self.cat_entity_rep = cat_entity_rep
-        self.mask_entity = mask_entity
         self.max_length_name = 8
         self.max_length_type = 6
+
+        # add specical tokens
+        self.tokenizer.add_special_tokens(special_tokens_dict)
+        self.bert.resize_token_embeddings(len(self.tokenizer))
         
     def forward(self, inputs, cat=False, isrel=False, istype=False):
         if istype:
@@ -586,7 +463,7 @@ class KGTypePromptSentenceEncoder(nn.Module):
             r_id = inputs['rel_id']
             if cat:
                 state = torch.cat((state, h_state, t_state), -1)
-            return state, outputs, h_state, t_state, h_id, t_id, r_id
+            return state, outputs
     
     def tokenize(self, raw_tokens, pos_head, pos_tail):
         # token -> index
@@ -599,18 +476,18 @@ class KGTypePromptSentenceEncoder(nn.Module):
             if token != '[MASK]' and token != '[SEP]':
                 token = token.lower()
             if cur_pos == pos_head[0]:
-                tokens.append('[unused0]')
+                tokens.append('[E1]')
                 pos1_in_index = len(tokens)
             if cur_pos == pos_tail[0]:
-                tokens.append('[unused1]')
+                tokens.append('[E2]')
                 pos2_in_index = len(tokens)
             
             tokens += self.tokenizer.tokenize(token)
             
-            # if cur_pos == pos_head[-1]:
-                # tokens.append('[/E1]')
-            # if cur_pos == pos_tail[-1]:
-                # tokens.append('[/E2]')
+            if cur_pos == pos_head[-1]:
+                tokens.append('[/E1]')
+            if cur_pos == pos_tail[-1]:
+                tokens.append('[/E2]')
             
             if token == '[MASK]':
                 rel_in_index = len(tokens)
