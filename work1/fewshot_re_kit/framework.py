@@ -331,26 +331,20 @@ class FewShotREFramework:
                 else:
                     logits, pred = model(support, query, 
                             N_for_train, K, Q * N_for_train + na_rate * Q, rel_text, support_type, query_type) 
-            else:
-                # support, query, label, label2classname = next(self.train_data_loader) 
-                support, query, label, rel_text = next(self.train_data_loader) # min
-                # print(support.keys())
+            elif iskg is False and istype is False:
+                support, query, label = next(self.train_data_loader) # min
                 # print('1:', torch.cuda.memory_allocated(0))
                 if torch.cuda.is_available():
                     for k in support:
                         support[k] = support[k].cuda()
                     for k in query:
                         query[k] = query[k].cuda()
-                    for k in rel_text:
-                        rel_text[k] = rel_text[k].cuda()
                     label = label.cuda()
                 # print('2:', torch.cuda.memory_allocated(0))
 
-                # logits, pred = model(support, query, 
-                #        N_for_train, K, Q * N_for_train + na_rate * Q, label2classname)
                 logits, pred = model(support, query, 
-                        N_for_train, K, Q * N_for_train + na_rate * Q, rel_text) # min
-                
+                        N_for_train, K, Q * N_for_train + na_rate * Q) # min
+ 
             if iskg:
                 if iscontra:
                     # loss = model.loss(logits, label) / float(grad_iter) + model.ce_loss(inter_logits) + model.ce_loss(sintra_logits) + model.ce_loss(qintra_logits)
@@ -488,19 +482,15 @@ class FewShotREFramework:
                         logits, pred, _, _, _ = model(support, query, N, K, Q * N + Q * na_rate, rel_text, support_type, query_type, eval=True) 
                     else:
                         logits, pred = model(support, query, N, K, Q * N + Q * na_rate, rel_text, support_type, query_type, eval=True) # min
-                else:
-                    # support, query, label, label2classname = next(eval_dataset)
-                    support, query, label, rel_text = next(eval_dataset)
+                elif iskg is False and istype is False:
+                    support, query, label = next(eval_dataset)
                     if torch.cuda.is_available():
                         for k in support:
                             support[k] = support[k].cuda()
                         for k in query:
                             query[k] = query[k].cuda()
-                        for k in rel_text:
-                            rel_text[k] = rel_text[k].cuda()
                         label = label.cuda()
-                    # logits, pred = model(support, query, N, K, Q * N + Q * na_rate, label2classname, eval=True) 
-                    logits, pred = model(support, query, N, K, Q * N + Q * na_rate, rel_text, eval=True) # min
+                    logits, pred = model(support, query, N, K, Q * N + Q * na_rate, eval=True) # min
 
                 right = model.accuracy(pred, label)
                 iter_right += self.item(right.data)

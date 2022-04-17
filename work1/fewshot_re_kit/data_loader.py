@@ -336,14 +336,6 @@ class PromptDataset(data.Dataset):
         word, pos1, pos2, rel_mask, mask = self.encoder.tokenize(template, kg_head, kg_tail)
         return word, pos1, pos2, rel_mask, mask 
     
-    def __getrel__(self, item):
-        word, mask = self.encoder.tokenize_rel(item)
-        return word, mask
-    
-    def __getname__(self, name):
-        word, mask = self.encoder.tokenize_name(name)
-        return word, mask
-
     def __additem__(self, d, word, pos1, pos2, rel_mask, mask):
         d['word'].append(word)
         d['pos1'].append(pos1)
@@ -353,26 +345,11 @@ class PromptDataset(data.Dataset):
 
     def __getitem__(self, index):
         target_classes = random.sample(self.classes, self.N)
-        relation_set = {'word': [], 'mask': [], 'rel_mask': []}
         support_set = {'word': [], 'pos1': [], 'pos2': [], 'mask': [], 'rel_mask': [] }
         query_set = {'word': [], 'pos1': [], 'pos2': [], 'mask': [], 'rel_mask': [] }
         query_label = []
 
         for i, class_name in enumerate(target_classes):
-            if self.ispubmed:
-                if class_name in self.pid2name.keys():
-                    name, _ = self.pid2name[class_name]
-                    rel_text, rel_text_mask = self.__getname__(name)
-                else:
-                    rel_text, rel_text_mask = self.__getname__(class_name)
-            else:
-                rel_text, rel_text_mask = self.__getrel__(self.pid2name[class_name])
-            rel_text, rel_text_mask = torch.tensor(rel_text).long(), torch.tensor(rel_text_mask).long()
-            rel_text_rel_mask = torch.tensor(0).long()
-            relation_set['word'].append(rel_text)
-            relation_set['mask'].append(rel_text_mask)
-            relation_set['rel_mask'].append(rel_text_rel_mask)
-            
             indices = np.random.choice(
                     list(range(len(self.json_data[class_name]))), 
                     self.K + self.Q, False)
@@ -393,7 +370,7 @@ class PromptDataset(data.Dataset):
 
             query_label += [i] * self.Q
 
-        return support_set, query_set, query_label, relation_set
+        return support_set, query_set, query_label
     
     def __len__(self):
         return 1000000000
@@ -401,25 +378,20 @@ class PromptDataset(data.Dataset):
 def prompt_collate_fn(data):
     batch_support = {'word': [], 'pos1': [], 'pos2': [], 'mask': [], 'rel_mask': []}
     batch_query = {'word': [], 'pos1': [], 'pos2': [], 'mask': [], 'rel_mask': []}
-    batch_relation = {'word': [], 'mask': [], 'rel_mask': []}
     batch_label = []
-    support_sets, query_sets, query_labels, relation_sets = zip(*data)
+    support_sets, query_sets, query_labels = zip(*data)
     for i in range(len(support_sets)):
         for k in support_sets[i]:
             batch_support[k] += support_sets[i][k]
         for k in query_sets[i]:
             batch_query[k] += query_sets[i][k]
-        for k in relation_sets[i]:
-            batch_relation[k] += relation_sets[i][k]
         batch_label += query_labels[i]
     for k in batch_support:
         batch_support[k] = torch.stack(batch_support[k], 0)
     for k in batch_query:
         batch_query[k] = torch.stack(batch_query[k], 0)
-    for k in batch_relation:
-        batch_relation[k] = torch.stack(batch_relation[k], 0)
     batch_label = torch.tensor(batch_label)
-    return batch_support, batch_query, batch_label, batch_relation
+    return batch_support, batch_query, batch_label
 
 def get_prompt_loader(name, pid2name, encoder, N, K, Q, batch_size, 
         num_workers=8, collate_fn=prompt_collate_fn, ispubmed=False, root='./data'):
