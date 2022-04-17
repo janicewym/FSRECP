@@ -3,6 +3,7 @@ from fewshot_re_kit.framework import FewShotREFramework
 from fewshot_re_kit.sentence_encoder import CNNSentenceEncoder, BERTSentenceEncoder, BERTPAIRSentenceEncoder, RobertaSentenceEncoder, RobertaPAIRSentenceEncoder, \
                                             PromptSentenceEncoder, KGPromptSentenceEncoder, KGTypePromptSentenceEncoder
 import models
+from models.my_proto import MYProto
 from models.my_kgproto import MYKGTProto
 import sys
 import torch

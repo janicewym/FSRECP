@@ -33,7 +33,7 @@ class EntityEnhancement(nn.Module):
         x1 = self.linear_combine_type(x)  # (B * N * K,max_len, H)
         return x1
 
-class MYKGTProto(fewshot_re_kit.framework.FewShotREModel):
+class MYProto(fewshot_re_kit.framework.FewShotREModel):
     
     def __init__(self, sentence_encoder, id2entity, id2rel, dot=False):
         fewshot_re_kit.framework.FewShotREModel.__init__(self, sentence_encoder)

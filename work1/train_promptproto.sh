@@ -8,7 +8,7 @@ python -u train_promptproto.py \
         --encoder "prompt" \
         --model "my_proto" \
         --val "val_wiki" \
-        --test "test_wiki "\
+        --test "test_wiki"\
         --root "../../KGPrompt_v4_1/data/" \
         --version "v2-exp5-twocon-sub-v2" \
         --fp16 
