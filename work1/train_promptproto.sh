@@ -10,5 +10,4 @@ python -u train_promptproto.py \
         --val "val_wiki" \
         --test "test_wiki"\
         --root "../../KGPrompt_v4_1/data/" \
-        --version "v2-exp5-twocon-sub-v2" \
-        --fp16 
+        --version "proto_v1" 
