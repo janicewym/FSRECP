@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-05-21T15:34:06.849Z" agent="5.0 (Macintosh)" etag="BGofq53AvrIg35xeOz-a" version="17.4.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-06-19T13:53:41.817Z" agent="5.0 (Macintosh)" etag="BDz5R6-oNY1uzQkvmVDa" version="17.4.0" type="github" pages="2">
   <diagram id="LCPhNvdda3lcD9kDLqjS" name="第 1 页">
-    <mxGraphModel dx="22" dy="553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="240" dy="691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -263,41 +263,53 @@
     </mxGraphModel>
   </diagram>
   <diagram id="YBkFHTBaJKHmCzBFiq0D" name="第 2 页">
-    <mxGraphModel dx="703" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="872" dy="553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="27noWYNILPITUNx_PyD3-0" />
         <mxCell id="27noWYNILPITUNx_PyD3-1" parent="27noWYNILPITUNx_PyD3-0" />
-        <mxCell id="27noWYNILPITUNx_PyD3-4" value="查询实例&lt;i&gt;q&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
-          <mxGeometry x="118" y="610" width="90" height="30" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-167" value="" style="group;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1" connectable="0">
+          <mxGeometry x="750.5" y="459" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="27noWYNILPITUNx_PyD3-127" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-167" vertex="1">
+          <mxGeometry width="100.36764705882354" height="26.470588235294116" as="geometry" />
+        </mxCell>
+        <mxCell id="27noWYNILPITUNx_PyD3-128" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-167" vertex="1">
+          <mxGeometry x="2.3161764705882506" y="1.7647058823529278" width="100.36764705882354" height="26.470588235294116" as="geometry" />
+        </mxCell>
+        <mxCell id="27noWYNILPITUNx_PyD3-129" value="&lt;font style=&quot;font-size: 11px&quot;&gt;Support instance&lt;/font&gt;&lt;font style=&quot;font-size: 11px&quot;&gt; s&lt;sub&gt;1&lt;/sub&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-167" vertex="1">
+          <mxGeometry x="4.632352941176501" y="3.5294117647058556" width="100.36764705882354" height="26.470588235294116" as="geometry" />
+        </mxCell>
+        <mxCell id="27noWYNILPITUNx_PyD3-4" value="query instance &lt;i&gt;q&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+          <mxGeometry x="107" y="610" width="101.25" height="31.666666666666668" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.009;entryY=0.58;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-5" target="27noWYNILPITUNx_PyD3-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-5" value="[CLS] 原始句子x [SEP] h [MASK] t [SEP] " style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-5" value="[CLS] sentence x [SEP] h [MASK] t [SEP] " style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="232" y="583" width="247" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-6" value="文本编码器" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-6" value="Text Encoder" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="497" y="520" width="83" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.537;entryY=-0.1;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;fillColor=#e1d5e7;strokeColor=#000000;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-7" target="27noWYNILPITUNx_PyD3-8" edge="1">
+        <mxCell id="AcEk_6No10zmM8sdgP_A-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=11;" edge="1" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-7" target="27noWYNILPITUNx_PyD3-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-7" value="关系名称&amp;amp;描述" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#CCCCFF;fontColor=#333333;strokeColor=#666666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
-          <mxGeometry x="395" y="398" width="90" height="30" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-7" value="relation name &amp;amp; description" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#CCCCFF;fontColor=#333333;strokeColor=#666666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+          <mxGeometry x="381" y="399" width="117" height="32" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.363;entryY=-0.009;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-8" target="27noWYNILPITUNx_PyD3-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-8" value="[CLS] 名称 [SEP] 描述 [SEP]" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
-          <mxGeometry x="340" y="450" width="190" height="30" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-8" value="[CLS] name [SEP] description [SEP]" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+          <mxGeometry x="340" y="450" width="197" height="32" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-9" target="27noWYNILPITUNx_PyD3-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-9" value="实例类型集合" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#CCCCFF;fontColor=#333333;strokeColor=#666666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-9" value="entity types" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#CCCCFF;fontColor=#333333;strokeColor=#666666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="603" y="398" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-11" value="知识库Wikidata" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#FFCCFF;strokeColor=default;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-11" value="&lt;div&gt;KGs&lt;br&gt;&lt;/div&gt;&lt;div&gt;Wikidata&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#FFCCFF;strokeColor=default;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="512" y="340" width="65" height="39" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.675;entryY=-0.013;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-13" target="27noWYNILPITUNx_PyD3-6" edge="1">
@@ -323,14 +335,14 @@
         <mxCell id="27noWYNILPITUNx_PyD3-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.013;entryY=0.651;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-21" target="27noWYNILPITUNx_PyD3-31" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-24" value="查询实例q" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
-          <mxGeometry x="610" y="647" width="130" height="30" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-24" value="query instance &lt;i&gt;q&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+          <mxGeometry x="611" y="647" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.004;entryY=0.11;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-25" target="27noWYNILPITUNx_PyD3-31" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-25" value="关系名称&amp;amp;描述" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
-          <mxGeometry x="610" y="513" width="130" height="30" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-25" value="relation name &amp;amp; description" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+          <mxGeometry x="610" y="513" width="130" height="32" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-31" target="27noWYNILPITUNx_PyD3-49" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -338,11 +350,14 @@
         <mxCell id="27noWYNILPITUNx_PyD3-122" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.001;entryY=0.68;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-31" target="27noWYNILPITUNx_PyD3-48" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-133" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-31" target="27noWYNILPITUNx_PyD3-129" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-133" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790.5" y="509.5" as="sourcePoint" />
+            <mxPoint x="800.3161764705883" y="489" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-31" value="外部知识增强原型网络" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
-          <mxGeometry x="763" y="509.5" width="77" height="169" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-31" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Knowledge-enhanced Prototypical Network&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+          <mxGeometry x="763" y="509.5" width="87" height="169" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=-0.006;entryY=0.441;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-28" target="27noWYNILPITUNx_PyD3-31" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -353,7 +368,7 @@
             <mxPoint x="790" y="613" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-47" value="双对比训练" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=none;strokeColor=#000000;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-47" value="Dual contrastive training " style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=none;strokeColor=#000000;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="870" y="450" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" edge="1">
@@ -368,7 +383,7 @@
         <mxCell id="27noWYNILPITUNx_PyD3-137" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-49" target="27noWYNILPITUNx_PyD3-135" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-49" value="查询实例q" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-49" value="query instance &lt;i&gt;q&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="876" y="622" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-101" value="" style="endArrow=classic;html=1;rounded=0;shadow=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-4" edge="1">
@@ -413,17 +428,20 @@
         <mxCell id="27noWYNILPITUNx_PyD3-136" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-121" target="27noWYNILPITUNx_PyD3-135" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-121" value="关系原型1" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#FF6666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-121" value="relation prototy1" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#FF6666;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="875" y="538" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.002;entryY=0.441;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-129" target="27noWYNILPITUNx_PyD3-47" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="27noWYNILPITUNx_PyD3-1" source="27noWYNILPITUNx_PyD3-129" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="476" as="sourcePoint" />
+            <mxPoint x="870" y="476" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-135" value="原型损失" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
-          <mxGeometry x="1010" y="575" width="60" height="30" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-135" value="prototypical loss" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+          <mxGeometry x="1010" y="575" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-162" value="" style="group;fillColor=none;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1" connectable="0">
-          <mxGeometry x="820" y="314" width="213" height="107" as="geometry" />
+          <mxGeometry x="819" y="314" width="223" height="107" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-90" value="" style="group;fillColor=default;container=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-162" vertex="1" connectable="0">
           <mxGeometry y="6" width="213" height="100" as="geometry" />
@@ -431,8 +449,20 @@
         <mxCell id="27noWYNILPITUNx_PyD3-89" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=none;strokeColor=#000000;" parent="27noWYNILPITUNx_PyD3-162" vertex="1">
           <mxGeometry y="7" width="213" height="100" as="geometry" />
         </mxCell>
+        <mxCell id="27noWYNILPITUNx_PyD3-161" value="Dual contrastive training " style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-162" vertex="1">
+          <mxGeometry x="33" width="147" height="10.5" as="geometry" />
+        </mxCell>
+        <mxCell id="27noWYNILPITUNx_PyD3-138" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;shadow=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;width=8.461538461538462;endSize=5.3076923076923075;endWidth=6.568047337278106;dashed=1;" parent="27noWYNILPITUNx_PyD3-162" source="27noWYNILPITUNx_PyD3-47" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="126" as="sourcePoint" />
+            <mxPoint x="110" y="96" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-66" value="" style="group;shadow=0;" parent="27noWYNILPITUNx_PyD3-162" vertex="1" connectable="0">
-          <mxGeometry x="43" y="26" width="163.5" height="74.5" as="geometry" />
+          <mxGeometry x="43" y="26" width="180" height="74.5" as="geometry" />
+        </mxCell>
+        <mxCell id="27noWYNILPITUNx_PyD3-88" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=none;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
+          <mxGeometry x="70.5" y="-6" width="93" height="71.5" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-50" value="" style="ellipse;whiteSpace=wrap;html=1;shadow=0;fillColor=#FF6666;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
           <mxGeometry y="20" width="10" height="10" as="geometry" />
@@ -447,16 +477,16 @@
           <mxGeometry x="25" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-55" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#99FF99;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
-          <mxGeometry x="82" y="30" width="10" height="10" as="geometry" />
+          <mxGeometry x="90" y="30" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-56" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#FF6666;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
-          <mxGeometry x="105" y="10" width="10" height="10" as="geometry" />
+          <mxGeometry x="113" y="10" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-57" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#99CCFF;arcSize=15;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
-          <mxGeometry x="102" y="40" width="10" height="10" as="geometry" />
+          <mxGeometry x="110" y="40" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-58" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#FF6666;arcSize=15;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
-          <mxGeometry x="122" y="30" width="10" height="10" as="geometry" />
+          <mxGeometry x="130" y="30" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-59" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;shadow=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="27noWYNILPITUNx_PyD3-66" source="27noWYNILPITUNx_PyD3-50" target="27noWYNILPITUNx_PyD3-53" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -478,54 +508,42 @@
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-62" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;shadow=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="27noWYNILPITUNx_PyD3-66" source="27noWYNILPITUNx_PyD3-55" target="27noWYNILPITUNx_PyD3-56" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="76.77000000003295" y="11.539999999999992" as="sourcePoint" />
-            <mxPoint x="97.23446609406733" y="20.00446609406734" as="targetPoint" />
+            <mxPoint x="84.77000000003295" y="11.539999999999992" as="sourcePoint" />
+            <mxPoint x="105.23446609406733" y="20.00446609406734" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-63" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;shadow=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="27noWYNILPITUNx_PyD3-66" source="27noWYNILPITUNx_PyD3-57" target="27noWYNILPITUNx_PyD3-56" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="97" y="40" as="sourcePoint" />
-            <mxPoint x="115" y="27.5" as="targetPoint" />
+            <mxPoint x="105" y="40" as="sourcePoint" />
+            <mxPoint x="123" y="27.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-64" value="" style="endArrow=classic;html=1;rounded=0;shadow=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="27noWYNILPITUNx_PyD3-66" source="27noWYNILPITUNx_PyD3-58" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="119" y="32" as="sourcePoint" />
-            <mxPoint x="115" y="15" as="targetPoint" />
+            <mxPoint x="127" y="32" as="sourcePoint" />
+            <mxPoint x="123" y="15" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-70" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=none;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
-          <mxGeometry x="-30" y="-5.5" width="93" height="71.5" as="geometry" />
+          <mxGeometry x="-33" y="-5.5" width="93" height="71.5" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-88" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=none;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
-          <mxGeometry x="67.5" y="-6" width="93" height="71.5" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-139" value="&lt;font style=&quot;font-size: 7px&quot;&gt;class-specific contrastive loss&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
+          <mxGeometry x="-37" y="61" width="101" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-139" value="&lt;font style=&quot;font-size: 7px&quot;&gt;特定类别对比损失&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
-          <mxGeometry x="-21" y="61" width="74" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-160" value="&lt;font style=&quot;font-size: 7px&quot;&gt;类别不可知对比损失&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
-          <mxGeometry x="78" y="61" width="74" height="10" as="geometry" />
-        </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-161" value="&lt;font style=&quot;font-size: 11px&quot;&gt;双对比训练&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-162" vertex="1">
-          <mxGeometry x="73" width="60" height="10.5" as="geometry" />
-        </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-138" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;shadow=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;width=8.461538461538462;endSize=5.3076923076923075;endWidth=6.568047337278106;dashed=1;" parent="27noWYNILPITUNx_PyD3-162" source="27noWYNILPITUNx_PyD3-47" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="110" y="126" as="sourcePoint" />
-            <mxPoint x="110" y="96" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="27noWYNILPITUNx_PyD3-160" value="&lt;font style=&quot;font-size: 7px&quot;&gt;class-agnostic contrastive loss&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;" parent="27noWYNILPITUNx_PyD3-66" vertex="1">
+          <mxGeometry x="65" y="61" width="102" height="10" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-164" value="" style="group;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1" connectable="0">
-          <mxGeometry x="112" y="562" width="96" height="36" as="geometry" />
+          <mxGeometry x="100" y="560" width="108" height="38" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-3" value="支持实例s&lt;sub&gt;1&lt;/sub&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-164" vertex="1">
-          <mxGeometry width="90" height="30" as="geometry" />
+          <mxGeometry width="101.25" height="31.666666666666668" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-113" value="支持实例s&lt;sub&gt;1&lt;/sub&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-164" vertex="1">
-          <mxGeometry x="3" y="3" width="90" height="30" as="geometry" />
+          <mxGeometry x="3.375" y="3.166666666666667" width="101.25" height="31.666666666666668" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-114" value="支持实例s&lt;sub&gt;1&lt;/sub&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-164" vertex="1">
-          <mxGeometry x="6" y="6" width="90" height="30" as="geometry" />
+        <mxCell id="27noWYNILPITUNx_PyD3-114" value="&lt;font style=&quot;font-size: 11px&quot;&gt;Support instance&lt;/font&gt;&lt;font style=&quot;font-size: 11px&quot;&gt; s&lt;sub&gt;1&lt;/sub&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-164" vertex="1">
+          <mxGeometry x="6.75" y="6.333333333333334" width="101.25" height="31.666666666666668" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-165" value="" style="group;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1" connectable="0">
           <mxGeometry x="604" y="556" width="137" height="36" as="geometry" />
@@ -536,11 +554,11 @@
         <mxCell id="27noWYNILPITUNx_PyD3-27" value="" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f8cecc;strokeColor=#b85450;" parent="27noWYNILPITUNx_PyD3-165" vertex="1">
           <mxGeometry x="3" y="3" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-28" value="实体类型1" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f8cecc;strokeColor=#b85450;" parent="27noWYNILPITUNx_PyD3-165" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-28" value="entity type 1" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#f8cecc;strokeColor=#b85450;" parent="27noWYNILPITUNx_PyD3-165" vertex="1">
           <mxGeometry x="7" y="6" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-166" value="" style="group;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1" connectable="0">
-          <mxGeometry x="610" y="605" width="136" height="34" as="geometry" />
+          <mxGeometry x="606" y="605" width="136" height="34" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-21" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-166" vertex="1">
           <mxGeometry width="130" height="30" as="geometry" />
@@ -548,20 +566,8 @@
         <mxCell id="27noWYNILPITUNx_PyD3-123" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-166" vertex="1">
           <mxGeometry x="3" y="2" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-124" value="支持实例s&lt;sub&gt;1&lt;/sub&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-166" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-124" value="&lt;font style=&quot;font-size: 11px&quot;&gt;Support instance&lt;/font&gt;&lt;font style=&quot;font-size: 11px&quot;&gt; s&lt;sub&gt;1&lt;/sub&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-166" vertex="1">
           <mxGeometry x="6" y="4" width="130" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-167" value="" style="group;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1" connectable="0">
-          <mxGeometry x="756.5" y="459" width="90" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-127" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-167" vertex="1">
-          <mxGeometry width="86.02941176470588" height="26.470588235294116" as="geometry" />
-        </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-128" value="支持实例s" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-167" vertex="1">
-          <mxGeometry x="1.9852941176470722" y="1.7647058823529278" width="86.02941176470588" height="26.470588235294116" as="geometry" />
-        </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-129" value="支持实例s&lt;sub&gt;1&lt;/sub&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="27noWYNILPITUNx_PyD3-167" vertex="1">
-          <mxGeometry x="3.9705882352941444" y="3.5294117647058556" width="86.02941176470588" height="26.470588235294116" as="geometry" />
         </mxCell>
         <mxCell id="27noWYNILPITUNx_PyD3-168" value="" style="group;shadow=0;" parent="27noWYNILPITUNx_PyD3-1" vertex="1" connectable="0">
           <mxGeometry x="550" y="450" width="196" height="39" as="geometry" />
@@ -572,13 +578,13 @@
         <mxCell id="27noWYNILPITUNx_PyD3-12" value="[CLS] 名称 [SEP] 描述 [SEP]" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="27noWYNILPITUNx_PyD3-168" vertex="1">
           <mxGeometry x="3" y="4" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-13" value="[CLS] 实体类型1 [SEP] " style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="27noWYNILPITUNx_PyD3-168" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-13" value="[CLS] entity type1 [SEP] " style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="27noWYNILPITUNx_PyD3-168" vertex="1">
           <mxGeometry x="6" y="9" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-169" value="抽取" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;fontSize=11;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-169" value="extract" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;fontSize=11;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="452" y="368" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="27noWYNILPITUNx_PyD3-170" value="抽取" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;fontSize=11;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
+        <mxCell id="27noWYNILPITUNx_PyD3-170" value="extract" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;fontSize=11;" parent="27noWYNILPITUNx_PyD3-1" vertex="1">
           <mxGeometry x="573" y="367" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
